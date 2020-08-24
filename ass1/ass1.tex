@@ -18,6 +18,10 @@
 \date{\today}
 \author{Lucas Fern (1080613)\\Friday 12:00pm Tutorial}
 
+\lhead{ECON20005 - Assignment 1}
+\rhead{Lucas Fern (1080613)}
+\pagestyle{fancy}
+
 \begin{document}
 \maketitle
 \paragraph{Notation Convention} In this assignment $(\mbox{ANZ}, \mbox{ANZ})$ represents a strategy where the player chooses ANZ in in two subgames. Sets of strategies appear in curly braces - \{\}.
@@ -56,24 +60,35 @@ For $M\leq 5$, Gina's strategy is $\{(\mbox{ANZ}, \mbox{ANZ})\}$, and for $M\geq
 Therefore the equilibrium strategies for $M\leq 5$ are Tommy: $\{(\mbox{ANZ})\}$, and Gina: $\{(\mbox{ANZ}, \mbox{ANZ})\}$. The equilibrium path is $\mbox{ANZ} \rightarrow \mbox{ANZ}$, and the equilibrium strategies are illustrated with {\color{red}red} arrows in Question 1.1.\\[2mm]
 For $M\geq 5$ the equilibrium strategies are Tommy: $\{(\mbox{NAB})\}$, and Gina: $\{(\mbox{NAB}, \mbox{NAB})\}$. Here the equilibrium path is $\mbox{NAB} \rightarrow \mbox{NAB}$, and the equilibrium strategies are illustrated with {\color{blue}blue} arrows.
 
-\subsection*{1.5} In this game table, Tommy's best action for each of Gina's options is \underline{\textbf{underlined and bold}}. Gina's best actions for $M<5$ are highlighted {\color{red}red}, and {\color{blue}blue} for $M>5$. For $M<5$ the equilibrium outcome is that they both choose ANZ, and for $M>5$ they both choose NAB. Again, at $M=5$ both of these options are Nash equilibria.\\
-\begin{table}[ht]
+\subsection*{1.5} In this game table, Tommy's best action for each of Gina's options is \underline{\textbf{underlined and bold}}. Gina's best actions for $M<5$ are highlighted {\color{red}red}, and {\color{blue}blue} for $M>5$. For $M<5$ the equilibrium outcome is that they both choose ANZ, and for $M>5$ they both choose NAB. Again, at $M=5$ both of these options are Nash equilibria.
+\begin{table}[H]
     \centering
-    \begin{tabular}{cccc}
-                                                    &                          & \multicolumn{2}{c}{Gina}                                     \\ \cline{3-4} 
-                                                    & \multicolumn{1}{c|}{}    & \multicolumn{1}{c|}{ANZ}    & \multicolumn{1}{c|}{NAB}       \\ \cline{2-4} 
-        \multicolumn{1}{c|}{\multirow{2}{*}{Tommy}} & \multicolumn{1}{c|}{ANZ} & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{red}25}} & \multicolumn{1}{c|}{18, {\color{blue}$M^2$}} \\ \cline{2-4} 
-        \multicolumn{1}{c|}{}                       & \multicolumn{1}{c|}{NAB} & \multicolumn{1}{c|}{18, {\color{red}25}} & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{blue}$M^2$}} \\ \cline{2-4} 
+    \begin{tabular}{cccccc}
+                                                    &                          & \multicolumn{4}{c}{Gina}                                                                                                              \\ \cline{3-6} 
+                                                    & \multicolumn{1}{c|}{}    & \multicolumn{1}{c|}{(ANZ, ANZ)} & \multicolumn{1}{c|}{(ANZ, NAB)} & \multicolumn{1}{c|}{(NAB, ANZ)} & \multicolumn{1}{c|}{(NAB, NAB)} \\ \cline{2-6} 
+        \multicolumn{1}{c|}{\multirow{2}{*}{Tommy}} & \multicolumn{1}{c|}{ANZ} & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{18}}, {\color{blue}$M^2$}}  & \multicolumn{1}{c|}{18, {\color{blue}$M^2$}}  \\ \cline{2-6} 
+        \multicolumn{1}{c|}{}                       & \multicolumn{1}{c|}{NAB} & \multicolumn{1}{c|}{18, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{blue}$M^2$}}  & \multicolumn{1}{c|}{\underline{\textbf{18}}, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{blue}$M^2$}}  \\ \cline{2-6} 
     \end{tabular}
 \end{table}
-These equilibria are subgame perfect in all situations as neither player can unilaterally deviate from the equilibrium strategies to secure a higher payoff.
+\noindent For $M=4$ (equivalent to the general case of $M<5$), 3 Nash equilibria exist for the game, these are:
+\begin{enumerate}
+    \item Tommy: $\{(\mbox{ANZ})\}$, and Gina: $\{(\mbox{ANZ}, \mbox{ANZ})\}$,
+    \item Tommy: $\{(\mbox{ANZ})\}$, and Gina: $\{(\mbox{ANZ}, \mbox{NAB})\}$; and,
+    \item Tommy: $\{(\mbox{NAB})\}$, and Gina: $\{(\mbox{NAB}, \mbox{ANZ})\}$.
+\end{enumerate}
+Only number 1 is subgame perfect, since although all 3 are Nash equilibria, the second and third involve one of the players making sub-optimal choices on one of their decision nodes.
+
 \subsection*{1.6}
-At $M=5$ Gina is indifferent between the banks as she receives an equal payoff of 25 regardless of her choice. The two equilibrium strategies in this case are:
+At $M=5$ Gina is indifferent between the banks as she receives an equal payoff of 25 regardless of her choice. This results in the 6 SPNE strategies:
 \begin{itemize}
-    \item Tommy: $\{(\mbox{ANZ})\}$, and Gina: $\{(\mbox{ANZ}, \mbox{ANZ})\}$; and
+    \item Tommy: $\{(\mbox{ANZ})\}$, and Gina: $\{(\mbox{ANZ}, \mbox{ANZ})\}$,
+    \item Tommy: $\{(\mbox{ANZ})\}$, and Gina: $\{(\mbox{ANZ}, \mbox{NAB})\}$,
+    \item Tommy: $\{(\mbox{ANZ})\}$, and Gina: $\{(\mbox{NAB}, \mbox{ANZ})\}$,
+    \item Tommy: $\{(\mbox{NAB})\}$, and Gina: $\{(\mbox{ANZ}, \mbox{NAB})\}$,
+    \item Tommy: $\{(\mbox{NAB})\}$, and Gina: $\{(\mbox{NAB}, \mbox{ANZ})\}$; and,
     \item Tommy: $\{(\mbox{NAB})\}$, and Gina: $\{(\mbox{NAB}, \mbox{NAB})\}$.
 \end{itemize}
-Either of these strategies result in an identical payoff of $(22,25)$ at $M=5$ and there is no incentive for either player to deviate from these strategies meaning they are both Subgame Perfect Nash Equilibria.
+Even though Tommy receives a payoff of 18 in some games and 22 in others, each of these is a SPNE, as Tommy cannot make a decision that will guarantee him a payoff of 22, since this relies entirely on Gina's choice and she is indifferent between the two.
 
 \section*{Question 2: Iteratively eliminating dominated strategies}
 \subsection*{2.1} Iterative elimination of dominated strategies results in the removal of the rows shown here:
@@ -97,7 +112,6 @@ In the table that emerges from Question 2.1 each players' best responses have be
 \subsection*{2.3}
 The cell corresponding to both players choosing K has a sum of payoffs $5+3 = 8$, the cell with both players choosing L has sum of payoffs $7+3 = 10$. $8 \neq 10$, so this is not a zero sum game.
 
-\newpage
 \section*{Question 3: Paul and Ringo take a vacation}
 \subsection*{3.1}
 \textbf{Extensive form:}
@@ -124,8 +138,8 @@ The cell corresponding to both players choosing K has a sum of payoffs $5+3 = 8$
     \begin{tabular}{cccc}
                                                    &                                 & \multicolumn{2}{c}{Ringo}                                         \\ \cline{3-4} 
                                                    & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{Gold Coast} & \multicolumn{1}{c|}{Queenstown} \\ \cline{2-4} 
-        \multicolumn{1}{c|}{\multirow{2}{*}{Paul}} & \multicolumn{1}{c|}{Gold Coast} & \multicolumn{1}{c|}{\textbf{5, 3}}       & \multicolumn{1}{c|}{-2, -2}     \\ \cline{2-4} 
-        \multicolumn{1}{c|}{}                      & \multicolumn{1}{c|}{Queenstown} & \multicolumn{1}{c|}{-2, -2}     & \multicolumn{1}{c|}{\textbf{1, 6}}       \\ \cline{2-4} 
+        \multicolumn{1}{c|}{\multirow{2}{*}{Paul}} & \multicolumn{1}{c|}{Gold Coast} & \multicolumn{1}{c|}{\underline{\textbf{5}}, \underline{\textbf{3}}}       & \multicolumn{1}{c|}{-2, -2}     \\ \cline{2-4} 
+        \multicolumn{1}{c|}{}                      & \multicolumn{1}{c|}{Queenstown} & \multicolumn{1}{c|}{-2, -2}     & \multicolumn{1}{c|}{\underline{\textbf{1}}, \underline{\textbf{6}}}       \\ \cline{2-4} 
     \end{tabular}
 \end{table}
 
