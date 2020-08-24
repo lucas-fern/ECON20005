@@ -160,27 +160,27 @@ The extensive form game is the following, where each players equilibrium strateg
     \begin{forest}
         for tree={circle,s sep = 20pt,calign=center}
         [Ringo,
-        [Paul, edge={->, red, line width=1.5pt}, edge label={node[above left,midway,font=\scriptsize]{Purchase \textbf{Extreme} Sports Pack}}
-        [Ringo,edge label={node[above left,midway,font=\scriptsize]{GC}}
-         [{(-2, 5)},edge label={node[midway,above left,font=\scriptsize]{GC}}]
-         [{(8, -2)},edge={->, red, line width=1.5pt}, edge label={node[midway,above right,font=\scriptsize]{QT}}]
+         [Paul, edge={->, red, line width=1.5pt}, edge label={node[above left,midway,font=\scriptsize]{Purchase \textbf{Extreme} Sports Pack}}
+          [Ringo,edge label={node[above left,midway,font=\scriptsize]{GC}}
+           [{(-2, 5)},edge label={node[midway,above left,font=\scriptsize]{GC}}]
+           [{(8, -2)},edge={->, red, line width=1.5pt}, edge label={node[midway,above right,font=\scriptsize]{QT}}]
+          ]
+          [Ringo, edge={->, red, line width=1.5pt}, edge label={node[midway,above right,font=\scriptsize]{QT}}
+           [{(-7, -2)},edge label={node[midway,above left,font=\scriptsize]{GC}}]
+           [{(10, 1)},edge={->, red, line width=1.5pt}, edge label={node[midway,above right,font=\scriptsize]{QT}}]
+          ]
+         ]
+         [Paul, edge label={node[above right,midway,font=\scriptsize]{Don't Purchase \textbf{Extreme} Sports Pack}}
+          [Ringo,edge={->, red, line width=1.5pt},edge label={node[above left,midway,font=\scriptsize]{GC}}
+           [{(3, 5)},edge={->, red, line width=1.5pt}, edge label={node[midway,above left,font=\scriptsize]{GC}}]
+           [{(-2, -2)},edge label={node[midway,above right,font=\scriptsize]{QT}}]
+          ]
+          [Ringo, edge label={node[midway,above right,font=\scriptsize]{QT}}
+           [{(-2, -2)},edge label={node[midway,above left,font=\scriptsize]{GC}}]
+           [{(6, 1)},edge={->, red, line width=1.5pt}, edge label={node[midway,above right,font=\scriptsize]{QT}}]
+          ]
+         ]
         ]
-        [Ringo, edge={->, red, line width=1.5pt}, edge label={node[midway,above right,font=\scriptsize]{QT}}
-         [{(-7, -2)},edge label={node[midway,above left,font=\scriptsize]{GC}}]
-         [{(10, 1)},edge={->, red, line width=1.5pt}, edge label={node[midway,above right,font=\scriptsize]{QT}}]
-        ]
-       ]
-       [Paul, edge label={node[above right,midway,font=\scriptsize]{Don't Purchase \textbf{Extreme} Sports Pack}}
-       [Ringo,edge={->, red, line width=1.5pt},edge label={node[above left,midway,font=\scriptsize]{GC}}
-        [{(3, 5)},edge={->, red, line width=1.5pt}, edge label={node[midway,above left,font=\scriptsize]{GC}}]
-        [{(-2, -2)},edge label={node[midway,above right,font=\scriptsize]{QT}}]
-       ]
-       [Ringo, edge label={node[midway,above right,font=\scriptsize]{QT}}
-        [{(-2, -2)},edge label={node[midway,above left,font=\scriptsize]{GC}}]
-        [{(6, 1)},edge={->, red, line width=1.5pt}, edge label={node[midway,above right,font=\scriptsize]{QT}}]
-       ]
-      ]
-     ]
     \end{forest}
 \end{figure}
 \noindent In this situation, the SPNE path is `Purchase \textbf{Extreme} Sports Pack' $\rightarrow$ Queenstown $\rightarrow$ Queenstown. The players equilibrium strategies are:
