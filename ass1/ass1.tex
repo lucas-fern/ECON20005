@@ -12,8 +12,6 @@
 \usepackage{multirow}
 \usepackage[shortlabels]{enumitem}
 
-\forestset{el/.style={edge label={node [pos=1,above,outer sep=3pt] {$#1$} }}}
-
 \title{\vspace{-2cm}ECON20005 Assignment 1}
 \date{\today}
 \author{Lucas Fern (1080613)\\Friday 12:00pm Tutorial}
@@ -33,11 +31,11 @@
         [Tommy,
          [Gina,edge={->, red, line width=1.5pt},edge label={node[above left,midway,font=\scriptsize]{ANZ}}
           [{(22, 25)},edge={->, red, line width=1.5pt},edge label={node[midway,above left,font=\scriptsize]{ANZ}}]
-          [{(18, $M^2$)},edge={->, blue, line width=1pt},edge label={node[midway,above right,font=\scriptsize]{NAB}}]
+          [{(18, $M^2 = 16$)},edge label={node[midway,above right,font=\scriptsize]{NAB}}]
          ]
-         [Gina,edge={->, blue, line width=1.5pt},edge label={node[midway,above right,font=\scriptsize]{NAB}}
+         [Gina,,edge label={node[midway,above right,font=\scriptsize]{NAB}}
           [{(18, 25)},edge={->, red, line width=1pt},edge label={node[midway,above left,font=\scriptsize]{ANZ}}]
-          [{(22, $M^2$)},edge={->, blue, line width=1.5pt},edge label={node[midway,above right,font=\scriptsize]{NAB}}]
+          [{(22, $M^2 = 16$)},edge label={node[midway,above right,font=\scriptsize]{NAB}}]
          ]
         ]
     \end{forest}
@@ -56,18 +54,17 @@ Tommy has the set of strategies $\{(\mbox{ANZ}), (\mbox{NAB})\}$.\\[2mm]
 Gina has $\{(\mbox{ANZ}, \mbox{ANZ}), (\mbox{ANZ}, \mbox{NAB}), (\mbox{NAB}, \mbox{ANZ}),(\mbox{NAB}, \mbox{NAB})\}$.
 
 \subsection*{1.4}
-For $M\leq 5$, Gina's strategy is $\{(\mbox{ANZ}, \mbox{ANZ})\}$, and for $M\geq 5$ her strategy is $\{(\mbox{NAB}, \mbox{NAB})\}$. By pruning the tree we resolve that Tommy's strategy is $\{(\mbox{ANZ})\}$ for $M\leq 5$ and $\{(\mbox{NAB})\}$ for $M\geq 5$.\\[2mm]
-Therefore the equilibrium strategies for $M\leq 5$ are Tommy: $\{(\mbox{ANZ})\}$, and Gina: $\{(\mbox{ANZ}, \mbox{ANZ})\}$. The equilibrium path is $\mbox{ANZ} \rightarrow \mbox{ANZ}$, and the equilibrium strategies are illustrated with {\color{red}red} arrows in Question 1.1.\\[2mm]
-For $M\geq 5$ the equilibrium strategies are Tommy: $\{(\mbox{NAB})\}$, and Gina: $\{(\mbox{NAB}, \mbox{NAB})\}$. Here the equilibrium path is $\mbox{NAB} \rightarrow \mbox{NAB}$, and the equilibrium strategies are illustrated with {\color{blue}blue} arrows.
+For $M=4$, Gina's strategy is $\{(\mbox{ANZ}, \mbox{ANZ})\}$ since $25 > M^2 = 16$. By pruning the tree we resolve that Tommy's strategy is $\{(\mbox{ANZ})\}$.\\[2mm]
+Therefore the equilibrium strategies for $M=4$ are Tommy: $\{(\mbox{ANZ})\}$, and Gina: $\{(\mbox{ANZ}, \mbox{ANZ})\}$. The equilibrium path is $\mbox{ANZ} \rightarrow \mbox{ANZ}$, and the equilibrium strategies are illustrated with {\color{red}red} arrows in Question 1.1.
 
-\subsection*{1.5} In this game table, Tommy's best action for each of Gina's options is \underline{\textbf{underlined and bold}}. Gina's best actions for $M<5$ are highlighted {\color{red}red}, and {\color{blue}blue} for $M>5$. For $M<5$ the equilibrium outcome is that they both choose ANZ, and for $M>5$ they both choose NAB. Again, at $M=5$ both of these options are Nash equilibria.
+\subsection*{1.5} In this game table, Tommy's best action for each of Gina's options is \underline{\textbf{underlined and bold}}. To assist with Question 1.6 Gina's best actions for $M<5$ are highlighted {\color{red}red}, and {\color{blue}blue} for $M>5$.
 \begin{table}[H]
     \centering
     \begin{tabular}{cccccc}
                                                     &                          & \multicolumn{4}{c}{Gina}                                                                                                              \\ \cline{3-6} 
                                                     & \multicolumn{1}{c|}{}    & \multicolumn{1}{c|}{(ANZ, ANZ)} & \multicolumn{1}{c|}{(ANZ, NAB)} & \multicolumn{1}{c|}{(NAB, ANZ)} & \multicolumn{1}{c|}{(NAB, NAB)} \\ \cline{2-6} 
-        \multicolumn{1}{c|}{\multirow{2}{*}{Tommy}} & \multicolumn{1}{c|}{ANZ} & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{18}}, {\color{blue}$M^2$}}  & \multicolumn{1}{c|}{18, {\color{blue}$M^2$}}  \\ \cline{2-6} 
-        \multicolumn{1}{c|}{}                       & \multicolumn{1}{c|}{NAB} & \multicolumn{1}{c|}{18, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{blue}$M^2$}}  & \multicolumn{1}{c|}{\underline{\textbf{18}}, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{blue}$M^2$}}  \\ \cline{2-6} 
+        \multicolumn{1}{c|}{\multirow{2}{*}{Tommy}} & \multicolumn{1}{c|}{ANZ} & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{18}}, {\color{blue}$M^2 = 16$}}  & \multicolumn{1}{c|}{18, {\color{blue}$M^2 = 16$}}  \\ \cline{2-6} 
+        \multicolumn{1}{c|}{}                       & \multicolumn{1}{c|}{NAB} & \multicolumn{1}{c|}{18, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{blue}$M^2 = 16$}}  & \multicolumn{1}{c|}{\underline{\textbf{18}}, {\color{red}25}}     & \multicolumn{1}{c|}{\underline{\textbf{22}}, {\color{blue}$M^2 = 16$}}  \\ \cline{2-6} 
     \end{tabular}
 \end{table}
 \noindent For $M=4$ (equivalent to the general case of $M<5$), 3 Nash equilibria exist for the game, these are:
@@ -110,7 +107,7 @@ This results in the normal form game:
 In the table that emerges from Question 2.1 each players' best responses have been highlighted. From this we can see that there are \textit{no} pure-strategy Nash equilibria.
 
 \subsection*{2.3}
-The cell corresponding to both players choosing K has a sum of payoffs $5+3 = 8$, the cell with both players choosing L has sum of payoffs $7+3 = 10$. $8 \neq 10$, so this is not a zero sum game.
+The cell corresponding to both players choosing K has a sum of payoffs $5+3=8$, the cell with both players choosing L has sum of payoffs $7+3=10$. $8 \neq 10$, so this is not a zero sum game.
 
 \section*{Question 3: Paul and Ringo take a vacation}
 \subsection*{3.1}
@@ -145,7 +142,7 @@ The cell corresponding to both players choosing K has a sum of payoffs $5+3 = 8$
 
 \subsection*{3.2} Using best response analysis on the Normal Form game table shows that two Nash equilibria exist, these are when either both players choose `Gold Coast', or both players choose `Queenstown'. These equilibria are illustrated on the extensive form game tree in {\color{red}red} and {\color{blue}blue} respectively, note that Ringo is forced to make the same choice at each of his decision nodes since it is a simultaneous game.
 
-\subsection*{3.3} The game does not have a focal point since Paul gets a higher payoff in the Gold Coast equilibrium than in the Queenstown equilibrium, and the opposite is true for Ringo.
+\subsection*{3.3} This game has a payoff maximising focal point of (Gold Coast, Gold Coast) since the total payoff for that NE is $5+3=8$ whereas the other NE has total payoff $1+6=7$. This relies on the fact that Ringo is ok with sacrificing personal benefit in order to maximise the total payoff for both players.
 
 \subsection*{3.4} The extensive form of this game is as follows:
 \begin{figure}[H]
