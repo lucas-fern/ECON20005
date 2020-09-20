@@ -323,9 +323,23 @@ And Rudd's is:
 $$r_{r}^{*}(0.25) = -0.25 + \sqrt{\frac{3 \times 0.25}{4}} \approx 0.1830$$
 
 \subsection*{4.4)}
-In question 4.3 it was shown that at $r_{a} = 0.25$, $r_{r} > r_{g}$. This can be extended to all positive values of $r_{a}$ since
-$$r_{g} = -r_{a} + \sqrt{\frac{r_{a}}{2}} = -r_{a} + \sqrt{\frac{1}{2}} \sqrt{r_{a}} \quad < \quad -r_{a} + \sqrt{\frac{3}{4}} \sqrt{r_{a}} = -r_{a} + \sqrt{\frac{3 r_{a}}{4}} = r_{r}$$
-for all $r_{a} > 0$ as the coefficient of $\sqrt{r_{a}}$ is strictly greater in Kevin's best response than Gillard's. \vfill
+To find the probability of each member winning the election, substitute their maximising value of $r$ into their expression for $p$:
+\begin{itemize}
+    \item Gillard: $$p_{g} = \frac{0.5r_{g}}{r_{g} + r_{a}} = \frac{0.5(-r_{a} + \sqrt{{r_{a}}/{2}})}{r_{a} + (-r_{a} + \sqrt{{r_{a}}/{2}})} = \frac{1}{2} \left( 1 - \sqrt{2 r_{a}} \right)$$
+    \item Rudd: $$p_{r} = \frac{0.75r_{r}}{r_{r} + r_{a}} = \frac{0.75(-r_{a} + \sqrt{{3r_{a}}/{4}})}{r_{a} + (-r_{a} + \sqrt{{3r_{a}}/{4}})} = \frac{3}{4} \left( 1 - \sqrt{\frac{4}{3} r_{a}} \right)$$
+\end{itemize}
+Plotting these probabilities makes it clear that Rudd's probability of winning is greater than Gillard's at all values of $r_{a}$ for which the probability is defined.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{probabilities.png}
+    \caption{Kevin Rudd (Purple) and Julia Gillard's (Green) probabilities of winning given Tony Abbot's rent seeking effort.}
+    \label{fig:probabilities}
+\end{figure}
+Substituting the specific values from the previous question verifies the claim that Labor should always choose Rudd:
+$$p_{g} = \frac{0.5 \times 0.1036}{0.1036 + 0.25} \approx 0.1464 \quad < \quad 0.3170 \approx \frac{0.75 \times 0.1830}{0.1830 \times 0.25} = p_{r}$$
+
+\newpage
+\vspace*{\fill}
 \centering
 Kevin 07 is also a significantly better downball player, so she never really stood a chance.
 \begin{figure}[hb]
@@ -334,4 +348,5 @@ Kevin 07 is also a significantly better downball player, so she never really sto
     \caption{Kev Shows Julia that he's a Force to be Reckoned with on the Downball Court.}
     \label{fig:handball}
 \end{figure}
+\vspace*{\fill}
 \end{document}
