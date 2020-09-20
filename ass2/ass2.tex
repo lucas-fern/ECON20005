@@ -282,4 +282,56 @@ The consumer surplus under Cournot competition was 80, so setting this surplus e
 \end{align*}
 Since $\tilde{c} \in [0, 100]$, $\tilde{c} = 100 - 80 = 20$ is the value of $\tilde{c}$ that makes the ACCC indifferent between approving and not approving the merger if its goal is to maximise consumer surplus.
 
+\section*{Question 4: Julia, Kevin, and the Federal Election}
+\subsection*{4.1)}
+Gillard's payoff is equal to the probability that she wins the election minus the rent-seeking effort $r_{g}$.
+$$\Pi_{g} = p_{g} - r_{g} = \frac{0.5 r_{g}}{r_{g} + r_{a}} - r_{g}$$
+To maximise this with respect to $r_{g}$, set the partial derivative equal to zero:
+\begin{align*}
+    \frac{\partial \Pi_{g}}{\partial r_{g}} &= (0.5)\frac{1}{r_{g} + r_{a}} + (0.5 r_{g})\frac{-1}{(r_{g} + r_{a})^2} - 1 = 0\\
+    &= \frac{(0.5)r_{a}}{(r_{g} + r_{a})^{2}} - 1\\
+    \implies (r_{g} + r_{a})^{2} &= (0.5)r_{a}\\
+    r_{g}^2 + 2r_{g}r_{a} + r_{a}^2 &= (0.5)r_{a}\\
+    0 &= r_{g}^2 + 2r_{a}r_{g} + (r_{a}^2 - (0.5)r_{a})\\
+    \mbox{Solving using the quadratic formula:}\\
+    r_{g} &= \frac{-2 r_{a} \pm \sqrt{4 r_{a}^{2} - 4(r_{a}^2 - (0.5)r_{a})}}{2}\\
+    &= \frac{-2 r_{a} \pm \sqrt{2 r_{a}}}{2}\\
+    &= -r_{a} \pm \sqrt{\frac{r_{a}}{2}}
+\end{align*}
+Since $r_{g} \geq 0$, $r_{g}^{*} = -r_{a} + \sqrt{{r_{a}}/{2}}$ for $r_{a} \in [0, 0.5]$.
+
+\subsection*{4.2)}
+Rudd's payoff is equal to the probability that he wins the election minus the rent-seeking effort $r_{r}$.
+$$\Pi_{r} = p_{r} - r_{r} = \frac{0.75 r_{r}}{r_{r} + r_{a}} - r_{r}$$
+Maximising again with the partial derivative:
+\begin{align*}
+    \frac{\partial \Pi_{r}}{\partial r_{r}} &= (0.75)\frac{1}{r_{r} + r_{a}} + (0.75 r_{r})\frac{-1}{(r_{r} + r_{a})^2} - 1 = 0\\
+    &\dots\\
+    0 &= r_{r}^2 + 2r_{a}r_{r} + (r_{a}^2 - (0.75)r_{a})\\
+    \mbox{Solving using the quadratic formula:}\\
+    r_{r} &= \frac{-2 r_{a} \pm \sqrt{4 r_{a}^{2} - 4(r_{a}^2 - (0.75)r_{a})}}{2}\\
+    &= \frac{-2 r_{a} \pm \sqrt{4 r_{a}^{2} - 4(r_{a}^2 - (0.75)r_{a})}}{2}\\
+    &= -r_{a} \pm \frac{\sqrt{3 r_{a}}}{2}\\
+    &= -r_{a} \pm \sqrt{\frac{3 r_{a}}{4}}
+\end{align*}
+Again since $r_{r} \geq 0$, $r_{r}^{*} = -r_{a} + \sqrt{{3 r_{a}}/{4}}$ for $r_{a} \in [0, 0.75]$.
+
+\subsection*{4.3)}
+Gillard's optimal rent-seeking effort is:
+$$r_{g}^{*}(0.25) = -0.25 + \sqrt{\frac{0.25}{2}} \approx 0.1036$$
+And Rudd's is:
+$$r_{r}^{*}(0.25) = -0.25 + \sqrt{\frac{3 \times 0.25}{4}} \approx 0.1830$$
+
+\subsection*{4.4)}
+In question 4.3 it was shown that at $r_{a} = 0.25$, $r_{r} > r_{g}$. This can be extended to all positive values of $r_{a}$ since
+$$r_{g} = -r_{a} + \sqrt{\frac{r_{a}}{2}} = -r_{a} + \sqrt{\frac{1}{2}} \sqrt{r_{a}} \quad < \quad -r_{a} + \sqrt{\frac{3}{4}} \sqrt{r_{a}} = -r_{a} + \sqrt{\frac{3 r_{a}}{4}} = r_{r}$$
+for all $r_{a} > 0$ as the coefficient of $\sqrt{r_{a}}$ is strictly greater in Kevin's best response than Gillard's. \vfill
+\centering
+Kevin 07 is also a significantly better downball player, so she never really stood a chance.
+\begin{figure}[hb]
+    \centering
+    \includegraphics[width=0.75\linewidth]{handball}
+    \caption{Kev Shows Julia that he's a Force to be Reckoned with on the Downball Court.}
+    \label{fig:handball}
+\end{figure}
 \end{document}
