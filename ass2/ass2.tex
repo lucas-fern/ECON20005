@@ -107,7 +107,7 @@ The extensive form of the game is:
 \end{figure}
 \noindent The pure strategy Nash equilibrium strategies are shown on the tree as {\color{magenta}pink} arrows. These are 
 \begin{itemize}
-    \item Lois: (Buy Tickets, Superman) [note that the superman choice applies to both final subgames],
+    \item Lois: (Buy Tickets, Superman) [note that the superman choice applies to both final subgames as they form an information set],
     \item Rachel: Superman.
 \end{itemize}
 The SPNE path in this case is Buy $\rightarrow$ Superman $\rightarrow$ Superman, and the payoff is $\mbox{(Lois, Rachel)} = (100, 30)$.
@@ -252,7 +252,7 @@ The consumer surplus under Cournot competition is 80. If the merger is approved 
 The total market surplus under Cournot competition is 160. If the merger is approved then the total surplus will increase to 303.75. Therefore the ACCC will approve the merger if their goal is to maximise total market surplus.
 
 \subsection*{3.6}
-Writing the profit in terms of $\tilde{c}$ gives $\Pi(P) = (P - \tilde{c}) \frac{100 - P}{10}$. To find the profit maximising quantity in terms of $\tilde{c}$ set the partial derivative equal to zero.
+Writing the profit in terms of $\tilde{c}$ gives $\Pi(P) = (P - \tilde{c}) \frac{100 - P}{10}$. To find the profit maximising price in terms of $\tilde{c}$ set the partial derivative equal to zero.
 \begin{align*}
     \frac{\partial \Pi(P)}{\partial P} = \frac{100 - P}{10} - \frac{1}{10} (P - \tilde{c}) &= 0\\
     10 - \frac{P}{10} - \frac{P}{10} + \frac{\tilde{c}}{10} &= 0\\
@@ -282,7 +282,7 @@ The consumer surplus under Cournot competition was 80, so setting this surplus e
 Since $\tilde{c} \in [0, 100]$, $\tilde{c} = 100 - 80 = 20$ is the value of $\tilde{c}$ that makes the ACCC indifferent between approving and not approving the merger if its goal is to maximise consumer surplus.
 
 \section*{Question 4: Julia, Kevin, and the Federal Election}
-\subsection*{4.1)}
+\subsection*{4.1}
 Gillard's payoff is equal to the probability that she wins the election minus the rent-seeking effort $r_{g}$.
 $$\Pi_{g} = p_{g} - r_{g} = \frac{0.5 r_{g}}{r_{g} + r_{a}} - r_{g}$$
 To maximise this with respect to $r_{g}$, set the partial derivative equal to zero:
@@ -299,7 +299,7 @@ To maximise this with respect to $r_{g}$, set the partial derivative equal to ze
 \end{align*}
 Since $r_{g} \geq 0$, $r_{g}^{*} = -r_{a} + \sqrt{{r_{a}}/{2}}$ for $r_{a} \in [0, 0.5]$.
 
-\subsection*{4.2)}
+\subsection*{4.2}
 Rudd's payoff is equal to the probability that he wins the election minus the rent-seeking effort $r_{r}$.
 $$\Pi_{r} = p_{r} - r_{r} = \frac{0.75 r_{r}}{r_{r} + r_{a}} - r_{r}$$
 Maximising again with the partial derivative:
@@ -315,13 +315,16 @@ Maximising again with the partial derivative:
 \end{align*}
 Again since $r_{r} \geq 0$, $r_{r}^{*} = -r_{a} + \sqrt{{3 r_{a}}/{4}}$ for $r_{a} \in [0, 0.75]$.
 
-\subsection*{4.3)}
-Gillard's optimal rent-seeking effort is:
-$$r_{g}^{*}(0.25) = -0.25 + \sqrt{\frac{0.25}{2}} \approx 0.1036$$
-And Rudd's is:
-$$r_{r}^{*}(0.25) = -0.25 + \sqrt{\frac{3 \times 0.25}{4}} \approx 0.1830$$
+\subsection*{4.3}
+Since the optimal rent seeking efforts were derived completely as a function of $r_{a}$ in questions 4.1 and 4.2, the optimal efforts for $r_{a} = 0.25$ can be found by simple substitution into the resulting equations, therefore:
+\begin{itemize}
+    \item Gillard's optimal rent-seeking effort is:
+    $$r_{g}^{*}(0.25) = -0.25 + \sqrt{\frac{0.25}{2}} \approx 0.1036$$
+    \item And Rudd's is:
+    $$r_{r}^{*}(0.25) = -0.25 + \sqrt{\frac{3 \times 0.25}{4}} \approx 0.1830$$
+\end{itemize}
 
-\subsection*{4.4)}
+\subsection*{4.4}
 To find the probability of each member winning the election, substitute their maximising value of $r$ into their expression for $p$:
 \begin{itemize}
     \item Gillard: $$p_{g} = \frac{0.5r_{g}}{r_{g} + r_{a}} = \frac{0.5(-r_{a} + \sqrt{{r_{a}}/{2}})}{r_{a} + (-r_{a} + \sqrt{{r_{a}}/{2}})} = \frac{1}{2} \left( 1 - \sqrt{2 r_{a}} \right)$$

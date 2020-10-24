@@ -1,0 +1,118 @@
+\documentclass{article}
+
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{forest}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{soul}
+\usepackage[shortlabels]{enumitem}
+
+\newcommand{\tE}[1]{$\mathbb{E}(\mbox{#1})$}
+\newcommand{\E}[1]{\mathbb{E}(\mbox{#1})}
+
+\title{\vspace{-2cm}ECON20005 Assignment 3}
+\date{\today}
+\author{Lucas Fern (1080613)\\Friday 12:00pm Tutorial}
+
+\lhead{ECON20005 - Assignment 3}
+\rhead{Lucas Fern (1080613)}
+\pagestyle{fancy}
+
+\begin{document}
+\maketitle
+\section*{Question 1: Entry Deterrence}
+\subsection*{1.1}
+When the firms set quantities simultaneously it is an example of Cournot competition. Since firms $A$ and $B$ are the only ones in the market, $Q = q_{A} + q_{B} \implies P = 25 - (q_{A} + q_{B})$.\\[2mm]
+Firm A has profit $\Pi_{A} = P \times q_{A} - c_{A} \times q_{A} = (25 - q_{A} - q_{B}) q_{A} - 5 \times q_{A} = 20q_{A} - q_{A}^{2} - q_{A}q_{B}$.\\[2mm]
+Maximising with respect to $q_{A}$:
+\begin{align*}
+    \frac{\partial \Pi_{A}}{\partial q_{A}} &= 20 - 2q_{A} - q_{B} = 0\\
+    q_{A} &= \frac{20 - q_{B}}{2}
+\end{align*}
+Since the firms are subject to identical conditions:
+$$q_{B} = \frac{20 - q_{A}}{2}$$
+Substituting $B$'s best response quantity into $A$'s:
+\begin{align*}
+    q_{A} &= \frac{20 - \frac{20 - q_{A}}{2}}{2}\\
+    &= \frac{\frac{20 + q_{A}}{2}}{2}\\
+    &= \frac{20 + q_{A}}{4}\\
+    0 &= 20 - 3q_{A}\\
+    q_{A} &= \frac{20}{3}
+\end{align*}
+Because the firms face symmetric best response quantities, $q_{A} = q_{B} \implies q_{B} = \frac{20}{3}$.
+Substituting this back into the profit function:
+\begin{align*}
+    \Pi_{A} = 20q_{A} - q_{A}^{2} - q_{A}q_{B} &= 20 \cdot \frac{20}{3} - \left( \frac{20}{3} \right)^{2} - \left( \frac{20}{3} \right)^{2}\\
+    &= \frac{400}{9}
+\end{align*}
+So the equilibrium quantities are $q_{A} = q_{B} = \frac{20}{3}$ and the equilibrium profits are $\Pi_{A} = \Pi_{B} = \frac{400}{9}$.
+
+\subsection*{1.2}
+Since $B$ is the second mover, their response will depend on firm $A$, from Q1.1 we have
+$$q_{B} = \frac{20 - q_{A}}{2}.$$
+Doing backward induction with this, firm $A$'s optimal choice can be found by taking the first order condition of the profit function and setting equal to zero:
+\begin{align*}
+    \Pi_{A} = 20q_{A} - q_{A}^{2} - q_{A}q_{B} &= 20q_{A} - q_{A}^{2} - q_{A}\frac{20 - q_{A}}{2}\\
+    &= 10q_{A} - \frac{q_{A}^{2}}{2}\\
+    \frac{\partial \Pi_{A}}{\partial q_{A}} = 10 - q_{A} &= 0\\
+    q_{A} &= 10
+\end{align*}
+Then to find $B$'s quantity:
+\begin{align*}
+    q_{B} &= \frac{20 - q_{A}}{2}\\
+    &= \frac{20 - 10}{2}\\
+    q_{B} &= 5
+\end{align*}
+So the total market quantity is $q_{A} + q_{B} = 15$, making the market price $25 - 15 = 10$. This means $A$'s profit is:
+$$\Pi_{A} = P \times q_{A} - c_{A} \times q_{A} = 10 \times 10 - (5 \times 10) = 50$$
+and B's profits are:
+$$10 \times 5 - (5 \times 5) = 25.$$
+The equilibrium quantities and profits differ from Q1.1 because as the first mover $A$ is able to commit to producing a larger quantity knowing that the best way for $B$ to respond is by producing less. $A$ partially pushes $B$ out of the market.
+
+\subsection*{1.3}
+Taking $B$'s profit equation and subtracting the fixed entry cost:
+$\Pi_{B} = P \times q_{B} - c_{B} \times q_{B} - F = 20q_{B} - q_{B}^{2} - q_{A}q_{B} - 9.$
+Importantly, since the derivative of the constant fixed cost is 0, $B$'s best response doesn't change, so substituting in $B$'s best response from Q1.1 in:
+\begin{align*}
+    \Pi_{B} &= 20q_{B} - q_{B}^{2} - q_{A}q_{B} - 9\\
+    &= 20 \times \frac{20 - q_{A}}{2} - \left( \frac{20 - q_{A}}{2} \right)^{2} - q_{A} \times \frac{20 - q_{A}}{2} - 9\\
+    &= 200 - 10q_{A} - (100 - 10q_{A} + q_{A}^{2}/4) - 10q_{A} + q_{A}^{2}/2 - 9\\
+    &= 91 - 10q_{A} + q_{A}^{2}/4
+\end{align*}
+Therefore for $B$ to not enter the market, $91 - 10q_{A} + q_{A}^{2}/4$ must be less than or equal to 0.
+\begin{align*}
+    91 - 10q_{A} + q_{A}^{2}/4 &\leq 0\\
+    q_{A}^{2} - 40q_{A} + 364 &\leq 0\\
+    (q_{A} - 14)(q_{A} - 26) &\leq 0
+\end{align*}
+Since the equation for $\Pi_{B}$ is a positive quadratic, $B$'s profit is 0 or negative for $q_{A} \in [14, 26]$, so the minimum quantity $A$ can choose to push $B$ out of the market is $q_{A} = 14$.
+
+\subsection*{1.4}
+$A$'s profit when $B$ enters the market in Q1.2 is 50. In Q1.3 where $A$ pushes $B$ out of the market, $A$ sells a quantity $q_{A} = 14$. With $A$ being the only firm in the market, the price is $P = 25 - 14 = 11$, so $A$'s profit is $\Pi_{A} = 11 \times 14 - 5 \times 14 = 84$. $84 > 50$ so it is profit maximising for $A$ to deter $B$ from entering the market.
+
+\section*{Question 2: Twists on the Linear City and Ice-Cream Salesman Models}
+\subsection*{2.1}
+\subsection*{2.2}
+\subsection*{2.3}
+\subsection*{2.4}
+
+\section*{Question 3: Rent Seeking for the National Broadband Network}
+\subsection*{3.1}
+\subsection*{3.2}
+\subsection*{3.3}
+
+\section*{Question 4: The Impact of Omar on Drug Dealing}
+\subsection*{4.1}
+\subsection*{4.2}
+\subsection*{4.3}
+\subsection*{4.4}
+
+\end{document}
