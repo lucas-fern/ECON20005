@@ -1,22 +1,14 @@
 \documentclass{article}
 
 \usepackage[a4paper,margin=2.5cm]{geometry}
-\usepackage{tikz}
 \usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{fancyhdr}
-\usepackage{hyperref}
+\usepackage{tikz}
 \usepackage{float}
-\usepackage{subcaption}
-\usepackage{forest}
-\usepackage{xcolor}
-\usepackage{multirow}
-\usepackage{booktabs}
-\usepackage{soul}
-\usepackage[shortlabels]{enumitem}
+\usepackage{MnSymbol,wasysym}
+\usetikzlibrary{arrows}
 
-\newcommand{\tE}[1]{$\mathbb{E}(\mbox{#1})$}
-\newcommand{\E}[1]{\mathbb{E}(\mbox{#1})}
+\pgfsetxvec{\pgfpoint{12cm}{0cm}}
 
 \title{\vspace{-2cm}ECON20005 Assignment 3}
 \date{\today}
@@ -100,9 +92,134 @@ $A$'s profit when $B$ enters the market in Q1.2 is 50. In Q1.3 where $A$ pushes 
 
 \section*{Question 2: Twists on the Linear City and Ice-Cream Salesman Models}
 \subsection*{2.1}
+Let the consumer indifferent between $A$ and $B$ be located at position $x_{1} \in [0, 0.5]$, their travel cost per unit distance is $t=3$ so the indifference condition is:
+\begin{align*}
+    p_{A} + 3x_{1} &= p_{B} + 3(0.5 - x_{1})\\
+    6x_{1} &= p_{B} - p_{A} + 1.5\\
+    x_{1} &= \frac{p_{B} - p_{A} + 1.5}{6}
+\end{align*}
+Then if the consumer indifferent between $B$ and $C$ is located at $x_{2} \in [0.5, 1]$, their indifference condition is:
+\begin{align*}
+    p_{B} + 3(x_{2} - 0.5) &= p_{C} + 3(1 - x_{2})\\
+    6x_{2} &= p_{C} - p_{B} + 4.5\\
+    x_{2} &= \frac{p_{C} - p_{B} + 4.5}{6}
+\end{align*}
+If $x_{1}$ or $x_{2}$ are out of their defined boundaries then no indifferent consumer exists in that section of the city.
+
 \subsection*{2.2}
+Starting with firm $A$, their profit is equal to the amount of consumers they sell to times the price, minus their cost:
+\begin{align*}
+    \Pi_{A} &= 100 \times x_{1} \times (p_{A} - c)\\
+    &= 100(p_{A} - 1) \times \frac{p_{B} - p_{A} + 1.5}{6}
+\end{align*}
+Maximising their profit by setting the first order condition equal to zero:
+\begin{align*}
+    \frac{\partial \Pi_{A}}{\partial p_{A}} = 100(p_{A} - 1) \times \frac{-1}{6} + 100 \times \frac{p_{B} - p_{A} + 1.5}{6} &= 0\\
+    \frac{100 - 100p_{A}}{6} + \frac{100p_{B} - 100p_{A} + 150}{6} &= 0\\
+    \frac{250 - 200p_{A} + 100p_{B}}{6} &= 0\\
+    250 + 100p_{B} &= 200p_{A}\\
+    p_{A} &= \frac{5 + 2p_{B}}{4}
+\end{align*}
+Now the same for firm $B$ but considering that they get customers from both ends of the street:
+\begin{align*}
+    \Pi_{B}&= 100 \times (x_{2} - x_{1}) \times (p_{B} - c)                                                      \\
+           &= 100(p_{B} - 1) \times \left( \frac{p_{C} - p_{B} + 4.5}{6} - \frac{p_{B} - p_{A} + 1.5}{6} \right) \\
+           &= 100(p_{B} - 1) \times \left( \frac{p_{A} - 2p_{B} + p_{C} + 3}{6} \right)                          \\
+\end{align*}
+\begin{align*}
+    \frac{\partial \Pi_{B}}{\partial p_{B}} = 100(p_{B} - 1) \times \frac{-1}{3} + 100 \times \frac{p_{A} - 2p_{B} + p_{C} + 3}{6} & = 0\\
+    \frac{200 - 200p_{B}}{6} + \frac{100p_{A} - 200p_{B} + 100p_{C} + 300}{6} & = 0\\
+    \frac{500 + 100p_{A} - 400p_{B} + 100p_{C}}{6} & = 0\\
+    500 + 100p_{A} + 100p_{C} &= 400p_{B}\\
+    p_{B} &= \frac{5 + p_{A} + p_{C}}{4}
+\end{align*}
+Since the location of consumers and firms on the street is symmetric about the centre, the firms face identical costs, and because typesetting \LaTeX\ takes longer than I'd like to admit, we will use the symmetry to conclude that firm $C$'s best response price is equal to firm $A$'s, therefore
+$$p_{C} = \frac{5 + 2p_{B}}{4}.$$
+Next, solving for the equilibrium prices, start with $B$:
+\begin{align*}
+    p_{B} &= \frac{5 + p_{A} + p_{C}}{4}\\
+    &= \frac{5 + \frac{5 + 2p_{B}}{4} + \frac{5 + 2p_{B}}{4}}{4}\\
+    &= \frac{30 + 4p_{B}}{16}\\
+    16p_{B} &= 30 + 4p_{B}\\
+    12p_{B} &= 30\\
+    p_{B} &= 2.5
+\end{align*}
+Then
+$$p_{A} = p_{C} = \frac{5 + 2p_{B}}{4} = \frac{10}{4} = 2.5.$$
+So all firms charge a price equal to 2.5 at equilibrium.\\[2mm]
+Finally to find the profits:
+\begin{align*}
+    100(p_{A} - 1) \times \frac{p_{B} - p_{A} + 1.5}{6} &= 100(2.5 - 1) \times \frac{2.5 - 2.5 + 1.5}{6}\\
+    &= 150 \times \frac{1.5}{6}\\
+    &= 37.5
+\end{align*}
+So by symmetry $\Pi_{C}$ also equals 37.5, and:
+\begin{align*}
+    \Pi_{B} &= 100(p_{B} - 1) \times \left( \frac{p_{A} - 2p_{B} + p_{C} + 3}{6} \right)\\
+    &= 150 \times \frac{3}{6}\\
+    &= 75
+\end{align*}
+So although all firms charge identical prices, $B$'s location in the middle of the street allows them to attract twice as many customers as the other firms, giving them twice the profits.
+
 \subsection*{2.3}
+Firstly, since $p=20$ is greater than their cost $c=1$, all firms maximise their profit by attracting the most consumers. Since all prices are equal and the cost of travel for a consumer is constant along the whole street, consumers simply purchase from the closest firm.\\[2mm]
+With firms located at 0, 0.5, and 1, the indifferent consumers are located at $\frac{0 + 0.5}{2} = 0.25$ and $\frac{0.5 + 1}{2} = 0.75$, meaning that firm $A$ captures the consumers in $[0, 0.25)$, firm $B$ gets $(0.25, 0.75)$ and the consumers in $(0.75, 1]$ purchase from $C$. In this situation if $A$ moves to position 0.1, then the midpoint and therefore indifferent consumer between $A$ and $B$ is located at $\frac{0.1 + 0.5}{2} = 0.3$, so $A$ captures the region $[0, 0.3)$ by unilaterally deviating to position 0.1 (since there is no firm to $A$'s ``left'' that they lose space to by moving). By doing this $A$ increases their market share from 25\% to 30\%, and since sales are profitable $A$ therefore increases their profit by unilaterally deviating, so setting up at 0, 0.5 and 1 cannot be a Nash equilibrium when $p=20$.
+
 \subsection*{2.4}
+In the scenario with firms placed at 0, 1/2 and 1, the firms divide the market into these intervals, where the arrows point to a consumer's nearest firm:
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[] (0,0) -- (1,0) ; %edit here for the axis
+        \foreach \x in  {0,1/4,1/2,3/4,1} % edit here for the vertical lines
+        \draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt);
+        \foreach \x in {0,1/4,1/2,3/4,1} % edit here for the numbers
+        \draw[shift={(\x,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] 
+        {$\x$};
+
+        \draw[shift={(0,0)},color=black] (0pt,0pt) -- (0pt, 3pt) node[above] 
+        {$A$};
+        \draw[shift={(1/2,0)},color=black] (0pt,0pt) -- (0pt, 3pt) node[above] 
+        {$B$};
+        \draw[shift={(1,0)},color=black] (0pt,0pt) -- (0pt, 3pt) node[above] 
+        {$C$};
+
+        \draw[latex-, line width=2pt,blue] (0,0) -- (1/4,0);
+        \draw[-latex, line width=2pt,red] (1/4,0) -- (1/2,0);
+        \draw[latex-, line width=2pt,blue] (1/2,0) -- (3/4,0);
+        \draw[-latex, line width=2pt,red] (3/4,0) -- (1,0);
+    \end{tikzpicture}
+\end{figure}
+\noindent The four intervals are of equal length, so the average travel distance for the entire linear city is the same as the average travel distance for one segment; $\frac{1}{4} \div 2 = \frac{1}{8}$.\\[2mm]
+In the other scenario with firms at 1/4, 1/2 and 3/4, the market is divided like this:
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw[] (0,0) -- (1,0) ; %edit here for the axis
+        \foreach \x in  {0,1/4,1/2,3/4,1} % edit here for the vertical lines
+        \draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt);
+        \foreach \x in {0,1/4,1/2,3/4,1} % edit here for the numbers
+        \draw[shift={(\x,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] 
+        {$\x$};
+
+        \draw[shift={(1/4,0)},color=black] (0pt,0pt) -- (0pt, 3pt) node[above] 
+        {$A$};
+        \draw[shift={(1/2,0)},color=black] (0pt,0pt) -- (0pt, 3pt) node[above] 
+        {$B$};
+        \draw[shift={(3/4,0)},color=black] (0pt,0pt) -- (0pt, 3pt) node[above] 
+        {$C$};
+
+        \draw[-latex, line width=2pt, red] (0,0) -- (1/4,0);
+        \draw[latex-, line width=2pt,green] (1/4,0) -- (3/8,0);
+        \draw[-latex, line width=2pt,magenta] (3/8,0) -- (1/2,0);
+        \draw[latex-, line width=2pt,green] (1/2,0) -- (5/8,0);
+        \draw[-latex, line width=2pt,magenta] (5/8,0) -- (3/4,0);
+        \draw[latex-, line width=2pt,blue] (3/4,0) -- (1,0);
+    \end{tikzpicture}
+\end{figure}
+\noindent The average travel distance for a consumer on the larger end arrows is the same as above, $\frac{1}{8}$, and the average distance on the shorter inner arrows is $\frac{1}{8} \div 2 = \frac{1}{16}$. Since half the market is covered with short arrows and half with long arrows, the overall average travel distance is the mean of the two, $\frac{3}{32} = 0.9375$. Therefore this is the socially desirable configuration.\\[2mm]
+\textbf{Note:} The fact that the 2nd arrangement has 6 arrows and the first only has 4 is a really nice proof that the average length of an arrow must be shorter in the second partitioning \smiley{}.
+
 
 \section*{Question 3: Rent Seeking for the National Broadband Network}
 \subsection*{3.1}
