@@ -2,11 +2,15 @@
 
 \usepackage[a4paper,margin=2.5cm]{geometry}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{fancyhdr}
 \usepackage{tikz}
 \usepackage{float}
 \usepackage{MnSymbol,wasysym}
 \usetikzlibrary{arrows}
+
+\newcommand{\tE}[1]{$\mathbb{E}[\mbox{#1}]$}
+\newcommand{\E}[1]{\mathbb{E}[\mbox{#1}]}
 
 \pgfsetxvec{\pgfpoint{12cm}{0cm}}
 
@@ -217,14 +221,56 @@ In the other scenario with firms at 1/4, 1/2 and 3/4, the market is divided like
         \draw[latex-, line width=2pt,blue] (3/4,0) -- (1,0);
     \end{tikzpicture}
 \end{figure}
-\noindent The average travel distance for a consumer on the larger end arrows is the same as above, $\frac{1}{8}$, and the average distance on the shorter inner arrows is $\frac{1}{8} \div 2 = \frac{1}{16}$. Since half the market is covered with short arrows and half with long arrows, the overall average travel distance is the mean of the two, $\frac{3}{32} = 0.9375$. Therefore this is the socially desirable configuration.\\[2mm]
-\textbf{Note:} The fact that the 2nd arrangement has 6 arrows and the first only has 4 is a really nice proof that the average length of an arrow must be shorter in the second partitioning \smiley{}.
-
+\noindent The average travel distance for a consumer on the larger end arrows is the same as above, $\frac{1}{8}$, and the average distance on the shorter inner arrows is $\frac{1}{8} \div 2 = \frac{1}{16}$. Since half the market is covered with short arrows and half with long arrows, the overall average travel distance is the mean of the two, $\frac{3}{32} = 0.9375$. Therefore this is the socially desirable configuration.
 
 \section*{Question 3: Rent Seeking for the National Broadband Network}
 \subsection*{3.1}
+Telstra's expected profit \tE{$\pi_{T}(r_{T}, r_{O})$} is equal to their probability of winning times their payoff for winning, minus the rent seeking effort.
+$$\E{$\pi_{T}(r_{T}, r_{O})$} = p_{T} \times V^{T} - r_{T} = \frac{750r_{T}}{r_{T} + r_{O}} - r_{T}$$
+And doing the same for Optus:
+$$\E{$\pi_{O}(r_{T}, r_{O})$} = p_{O} \times V^{O} - r_{O} = \frac{500r_{O}}{r_{T} + r_{O}} - r_{T}$$
+
 \subsection*{3.2}
+To maximise the expected profits, set the first partial derivative with respect to the rent seeking effort equal to zero. For Telstra:
+\begin{align*}
+    \frac{\partial \E{$\pi_{T}(r_{T}, r_{O})$}}{\partial r_{T}} = \frac{750(r_{T} + r_{O}) - 750r_{T}}{(r_{T} + r_{O})^{2}} - 1 &= 0\\
+    \frac{750r_{O}}{(r_{T} + r_{O})^{2}} - 1 &= 0\\
+    750r_{O} &= r_{T}^{2} + 2r_{T}r_{O} + r_{O}^{2}\\
+    r_{T}^{2} + 2r_{O}r_{T} + (r_{O}^{2} - 750r_{O}) &= 0\\
+    r_{T} &= \frac{-2r_{O} \pm \sqrt{4r_{O}^{2} - 4(r_{O}^{2} - 750r_{O})}}{2}\\
+    r_{T} &= -r_{O} \pm 5\sqrt{30r_{O}}
+\end{align*}
+And for Optus:
+\begin{align*}
+    \frac{\partial \E{$\pi_{O}(r_{T}, r_{O})$}}{\partial r_{O}} = \frac{500(r_{T} + r_{O}) - 500r_{O}}{(r_{T} + r_{O})^{2}} - 1 &= 0\\
+    \frac{500r_{T}}{(r_{T} + r_{O})^{2}} - 1 &= 0\\
+    500r_{T} &= r_{T}^{2} + 2r_{T}r_{O} + r_{O}^{2}\\
+    r_{O}^{2} + 2r_{T}r_{O} + (r_{T}^{2} - 500r_{T}) &= 0\\
+    r_{O} &= \frac{-2r_{T} \pm \sqrt{4r_{T}^{2} - 4(r_{T}^{2} - 500r_{T})}}{2}\\
+    r_{O} &= -r_{T} \pm 10\sqrt{5r_{T}}
+\end{align*}
+And since both rent seeking efforts are non-negative the negative solutions can be excluded, giving
+$$r_{T} = -r_{O} + 5\sqrt{30r_{O}}; \qquad r_{O} = -r_{T} + 10\sqrt{5r_{T}}.$$
+
 \subsection*{3.3}
+Solve simultaneously to find the equilibrium rent seeking efforts:
+$$r_{T} = -r_{O} + 5\sqrt{30r_{O}}; \qquad r_{O} = -r_{T} + 10\sqrt{5r_{T}}$$
+\begin{align*}
+    \implies r_{T} &= -(-r_{T} + 10\sqrt{5r_{T}}) + 5\sqrt{30(-r_{T} + 10\sqrt{5r_{T}})}\\
+    &= r_{T} + 10\sqrt{5r_{T}} + 5\sqrt{30(-r_{T} + 10\sqrt{5r_{T}})}\\
+    100(5r_{T}) &= 25 \times 30(-r_{T} + 10\sqrt{5r_{T}})\\
+    5r_{T} &= 30\sqrt{5r_{T}}\\
+    25r_{T}^2 &= 30^{2} \times 5r_{T}\\
+    r_{T}^2 - 180r_{T} &= 0\\
+    r_{T}(r_{T} - 180) &= 0
+\end{align*}
+So $r_{T} = 0 \mbox{ and } r_{T} = 180$. Substituting these into Optus's optimal effort:
+$$r_{O} = -r_{T} + 10\sqrt{5r_{T}} = 0 + 0 = 0$$
+And:
+$$r_{O} = -r_{T} + 10\sqrt{5r_{T}} = -180 + 10\sqrt{900} = 120$$
+From this it appears that $(r_{T}, r_{O}) = (0, 0)$ and $(r_{T}, r_{O}) = (180, 120)$ are both Nash equilibria, but this is not true. Since $(r_{T}, r_{O}) = (0, 0) \implies p_{T} = p_{O} = \frac{0}{0}$, $(r_{T}, r_{O}) = (0, 0)$ \textit{cannot} be a Nash equilibrium, as $\frac{0}{0}$ is \textit{undefined}.\\[2mm]
+The only true Nash equilibrium is therefore $(r_{T}, r_{O}) = (180, 120)$, where Telstra is willing to make a greater rent seeking investment than Optus due to their higher valuation of the contract.
+
 
 \section*{Question 4: The Impact of Omar on Drug Dealing}
 \subsection*{4.1}
