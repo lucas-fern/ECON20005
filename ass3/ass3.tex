@@ -274,8 +274,41 @@ The only true Nash equilibrium is therefore $(r_{T}, r_{O}) = (180, 120)$, where
 
 \section*{Question 4: The Impact of Omar on Drug Dealing}
 \subsection*{4.1}
+To compensate a dealer, Stringer must pay them an amount equal to size of the disutility they suffer for expending effort, since when their overall payoff is zero they will choose to work over not working. Therefore it costs \$100,000 to compensate a Low Effort dealer, and \$175,000 to compensate a High Effort dealer. Knowing this Stringer's expected profit can be calculated for hiring each type of dealer:
+\begin{itemize}
+    \item Hiring a dealer who puts in High Effort, Stringer's expected profit is $\$400,000 \times 0.8 - 175,000 = \$145,000$; and
+    \item Hiring a dealer who puts in Low Effort, Stringer's expected profit is $\$400,000 \times 0.4 - 100,000 = \$60,000$
+\end{itemize}
+Because of this Stringer wants dealers to put in High Effort, so when he can observe the effort put in by the dealers he will compensate them so that they receive a profit of 0. In this situation all dealers choose to put in High Effort as defined in the question and Stringer compensates each of them with \$175,000, making a profit of \$145,000 per dealer.
+
 \subsection*{4.2}
+For the wage scheme to work the expected revenue must be large enough that the dealers accept it over not working for Stringer (this is the Participation Constraint) and the scheme must provide a sufficient bonus so that the dealers are incentivised to put in High Effort (the Incentive Compatibility Constraint).\\[2mm]
+Starting with the Incentive Compatibility Constraint, Stringer wants the payoff of High Effort to be the same as the payoff for Low Effort, since this is the minimum cost for which the dealers will choose to put in High Effort.
+$$s + 0.8 \times b - 175,000 = s + 0.4 \times b - 100,000$$
+Now that the Incentive Compatibility Constraint is met, the Participation Constraint can be found by with the knowledge that the dealers put in High Effort. For this, the payoff of participating must be greater than or equal to their payoff for not working at all:
+$$s + 0.8 \times b - 175,000 \geq 0$$
+And since Stringer wants to minimise his costs he will choose $s$ and $b$ such that
+$$s + 0.8 \times b - 175,000 = 0.$$
+Solving these constraints:
+\begin{align*}
+    s + 0.8 \times b - 175,000 &= s + 0.4 \times b - 100,000\\
+    \implies 0.4b &= 75,000\\
+    b &= \$187,500\\
+    \\
+    s + 0.8 \times b - 175,000 &= 0\\
+    \implies s &= 175,000 - 0.8 \times 187,500\\
+    s &= \$25,000
+\end{align*}
+Stringer's expected profit per dealer with salaries and bonuses of this size is
+$$\mathbb{E}(\Pi) = 0.8 \times 400,000 - 0.8 \times 187,500 - 25,000 = \$145,000.$$
+In this scenario Stringer pays a higher bonus than in the lecture notes since the presence of Omar increases the disutility that dealers suffer for putting in High Effort from \$150,000 to \$175,000. Stringer is able to reduce the base salary $s$ since the higher bonus increases the expected profit from Low Effort as well as High, so he can reduce this without failing the participation constraint.
+
 \subsection*{4.3}
+If Stringer does not want to attract High Effort he simply has to pay the dealers the minimum amount that covers their disutility for expending Low Effort, at this salary they will choose to work over not working at all since their profits are equal. No bonus is necessary if only Low Effort is considered ($b = 0$), so there is simply a base salary of $s = \$100,000$.\\[2mm]
+With this contract Stringer's expected profit is
+$$\mathbb{E}(\Pi) = 0.4 \times 400,000 - 100,000 = \$60,000.$$
+
 \subsection*{4.4}
+Stringer receives an expected profit of \$145,000 per dealer if he induces High Effort and only \$60,000 from the Low Effort contract, so he will prefer the High Effort inducing contract.
 
 \end{document}
