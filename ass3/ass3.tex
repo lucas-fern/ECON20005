@@ -54,7 +54,7 @@ So the equilibrium quantities are $q_{A} = q_{B} = \frac{20}{3}$ and the equilib
 \subsection*{1.2}
 Since $B$ is the second mover, their response will depend on firm $A$, from Q1.1 we have
 $$q_{B} = \frac{20 - q_{A}}{2}.$$
-Doing backward induction with this, firm $A$'s optimal choice can be found by taking the first order condition of the profit function and setting equal to zero:
+Doing backward induction with this, firm $A$'s optimal choice can be found by taking the first order condition of the profit function:
 \begin{align*}
     \Pi_{A} = 20q_{A} - q_{A}^{2} - q_{A}q_{B} &= 20q_{A} - q_{A}^{2} - q_{A}\frac{20 - q_{A}}{2}\\
     &= 10q_{A} - \frac{q_{A}^{2}}{2}\\
@@ -116,7 +116,7 @@ Starting with firm $A$, their profit is equal to the amount of consumers they se
     \Pi_{A} &= 100 \times x_{1} \times (p_{A} - c)\\
     &= 100(p_{A} - 1) \times \frac{p_{B} - p_{A} + 1.5}{6}
 \end{align*}
-Maximising their profit by setting the first order condition equal to zero:
+Maximising their profit by taking the first order condition:
 \begin{align*}
     \frac{\partial \Pi_{A}}{\partial p_{A}} = 100(p_{A} - 1) \times \frac{-1}{6} + 100 \times \frac{p_{B} - p_{A} + 1.5}{6} &= 0\\
     \frac{100 - 100p_{A}}{6} + \frac{100p_{B} - 100p_{A} + 150}{6} &= 0\\
@@ -228,7 +228,7 @@ In the other scenario with firms at 1/4, 1/2 and 3/4, the market is divided like
 Telstra's expected profit \tE{$\pi_{T}(r_{T}, r_{O})$} is equal to their probability of winning times their payoff for winning, minus the rent seeking effort.
 $$\E{$\pi_{T}(r_{T}, r_{O})$} = p_{T} \times V^{T} - r_{T} = \frac{750r_{T}}{r_{T} + r_{O}} - r_{T}$$
 And doing the same for Optus:
-$$\E{$\pi_{O}(r_{T}, r_{O})$} = p_{O} \times V^{O} - r_{O} = \frac{500r_{O}}{r_{T} + r_{O}} - r_{T}$$
+$$\E{$\pi_{O}(r_{T}, r_{O})$} = p_{O} \times V^{O} - r_{O} = \frac{500r_{O}}{r_{T} + r_{O}} - r_{O}$$
 
 \subsection*{3.2}
 To maximise the expected profits, set the first partial derivative with respect to the rent seeking effort equal to zero. For Telstra:
